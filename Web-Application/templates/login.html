@@ -1,0 +1,18 @@
+{% extends "nheader.html" %}
+{% block body %}
+<div class="se-pre-con"></div>
+<br>
+<div class="wrapper">
+{% from "_formhelpers.html" import render_field %}
+<form class="form-signin" method=post action="/login/">
+  <h2 class="form-signin-heading">Police Station Login</h2>
+  <dl class="form-group">
+    {{render_field(form.st_id)}}
+    {{render_field(form.password)}}
+  </dl>
+  <p><input class="btn btn-lg btn-primary btn-block" type=submit value=Login></p>
+</form>
+{% if error %}
+  <p class="error"><strong>Error:</strong>{{error}}</p>
+{% endif %}</div>
+{% endblock %}
